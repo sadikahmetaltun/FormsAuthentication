@@ -11,8 +11,8 @@ namespace FormAuthenticationMVC.Security.Web
     {
         public static void CreateAuthCookie(int id, string firstname, string lastname, string email, string password, string[] roles, bool status)
         {
-            var authTicket = new FormsAuthenticationTicket(1, firstname, DateTime.Now, DateTime.Now.AddDays(1), false, CreateAuthTags(id, firstname, lastname,  email, password, roles, status));
-            string encTicket = FormsAuthentication.Encrypt(authTicket); 
+            var authTicket = new FormsAuthenticationTicket(1, firstname, DateTime.Now, DateTime.Now.AddDays(1), false, CreateAuthTags(id, firstname, lastname, email, password, roles, status));
+            string encTicket = FormsAuthentication.Encrypt(authTicket);
             HttpContext.Current.Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
         }
         private static string CreateAuthTags(int id, string firstname, string lastname, string email, string password, string[] roles, bool status)
