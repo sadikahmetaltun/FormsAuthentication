@@ -39,3 +39,13 @@ In this example, we implemented a role-based input-output system with basic form
             }
         }
 ```
+```csharp
+    [SecuredOperationFilter(Roles = "Admin")]
+    public class HomeController : Controller
+    {
+        public ActionResult Index()
+        {
+            return View();
+        }
+    }
+```
