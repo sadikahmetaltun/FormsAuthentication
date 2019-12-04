@@ -9,6 +9,8 @@ In this example, we implemented a role-based input-output system with basic form
 
 `FormAuthenticationMVC.Filters.SecuredOperationFilter // filter method we intervene before and after the method// `
 
+`Global.asax`
+
 ```csharp
         private void MvcApplication_PostAuthenticateRequest(object sender, EventArgs e)
         {
